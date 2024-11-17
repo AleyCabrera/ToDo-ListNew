@@ -1,0 +1,370 @@
+/* Variables del proyecto */
+/* Variables de tema */
+:root {
+    --background-light: #E9F1FA;
+    --background-dark: #2c3e50;
+    --text-light: #00ABE4;
+    --text-dark: #ecf0f1;
+    --primary-light: #4CAF50;
+    --primary-dark: #27ae60;
+    --secondary-light: #f44336;
+    --secondary-dark: #c0392b;
+    --text-sm: 14px;
+    --text-md: 16px;
+    --text-lg: 18px;
+    --text-xl: 20px;
+    --font-primary: "Roboto", serif;
+    --font-primary-light: 300;
+    --font-primary-regular: 400;
+    --font-primary-bold: 700;
+}
+
+[data-theme="dark"] {
+    --background-light: #2c3e50;
+    --background-dark: #E9F1FA;
+    --text-light: #ecf0f1;
+    --text-dark: #00ABE4;
+    --primary-light: #27ae60;
+    --primary-dark: #4CAF50;
+    --secondary-light: #c0392b;
+    --secondary-dark: #f44336;
+}
+
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: var(--text-md);
+    background-color: var(--background-light);
+    color: var(--text-light);
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Dark mode */
+.dark-mode {
+    background-color: var(--background-dark);
+    color: var(--text-dark);
+}
+
+.theme-toggle {
+    position: fixed;
+    width: 45px;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    background-color: var(--primary-light);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 20px;
+    transition: background-color 0.3s ease, transform 0.5s ease;
+}
+
+.theme-toggle:hover {
+    background-color: var(--primary-dark);
+    transform: scale(1.1);
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px 0 20px 0;
+    width: 100%;
+    margin-bottom: 30px;
+    background-color: var(--primary-light);
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header img {
+    width: 70px;
+    height: 70px;
+    margin-right: 10px;
+    border-radius: 25%;
+    box-shadow: var(--background-light)  0 0 6px;
+    transition: transform 0.5s ease;
+}
+
+.header img:hover {
+    transform: rotate(360deg);
+}
+
+.header .tareas {
+    font-size: var(--text-xl);
+    font-weight: var(--font-primary-bold);
+    animation: fadeIn 2s ease-in-out;
+}
+
+.header .tareas:hover {
+    background-color: var(--primary-dark);
+    color: var(--text-light);
+    transition: all 0.2s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*contenedor principal*/
+div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    /*permite que los elementos se ajusten al tamaño del contenedor*/
+    gap: 5px;
+    margin: 0 auto;
+    border-radius: 1px;
+    padding: 0;
+    width: 800px;
+    /*limita el contenedor principal*/
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Formulario */
+.input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    width: 100%;
+    margin:  0 auto;
+    padding-bottom: 20px;
+}
+
+.input input[type="text"] {
+    width: 35%;
+    padding: 10px;
+    border: 1px solid var(--primary-light);
+    border-radius: 10px; 
+    font-size: var(--text-md);
+    font-family: var(--font-primary);
+    font-weight: var(--font-primary-regular);
+    outline: none;
+    box-shadow: 0 4px 8px rgba(152, 160, 244, 0.992);
+    transition: border-color 0.5s ease;
+}
+
+.input input[type="text"]:focus {
+    border-color: var(--primary-dark);
+}
+
+.input input[type="date"] {
+    width: 13%;
+    padding: 10px;
+    border: 1px solid var(--primary-light);
+    border-radius: 10px; 
+    font-size: var(--text-md);
+    font-family: var(--font-primary);
+    font-weight: var(--font-primary-regular);
+    outline: none;
+    box-shadow: 0 4px 8px rgba(152, 160, 244, 0.992);
+    transition: border-color 0.5s ease;
+}
+
+.input .bt {
+    width: 12%;
+    padding: 10px;
+    border: 1px solid var(--primary-light);
+    border-radius: 10px; 
+    font-size: var(--text-md);
+    font-family: var(--font-primary);
+    font-weight: var(--font-primary-regular);
+    outline: none;
+    box-shadow: 0 4px 8px rgba(152, 160, 244, 0.992);
+    transition: border-color 0.5s ease;
+    background-color: var(--primary-light);
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.5s ease, transform 0.5s ease;
+}
+
+.input .bt:hover {
+    background-color: var(--primary-dark);
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(228, 227, 227, 0.992);
+    transition: border-color 0.5s ease;
+}
+
+/* status de las tareas */
+.status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 30%;
+    margin:  0 auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.status:hover {
+    width: 30%;
+    padding: 10px;
+    border: 1px solid var(--primary-light);
+    background-color: var(--primary-light);
+    color: white;
+    border-radius: 10px; 
+    font-size: var(--text-md);
+    font-family: var(--font-primary);
+    font-weight: var(--font-primary-regular);
+    outline: none;
+    box-shadow: 0 4px 8px rgba(152, 160, 244, 0.992);
+    transition: border-color 0.5s ease;
+}
+
+/* filtros */
+.filters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: auto;
+    margin:  0 auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.filters button {
+    padding: 5px;
+    border: 1px solid var(--primary-light);
+    border-radius: 10px; 
+    font-size: var(--text-md);
+    font-family: var(--font-primary);
+    font-weight: var(--font-primary-regular);
+    outline: none;
+    box-shadow: 0 4px 8px rgba(152, 160, 244, 0.992);
+    transition: border-color 0.5s ease;
+    background-color: var(--primary-light);
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.5s ease, transform 0.5s ease;
+}
+
+.filters button:hover {
+    background-color: var(--primary-dark);
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(228, 227, 227, 0.992);
+    transition: border-color 0.5s ease;
+}
+
+
+
+/* Lista de tareas */
+div>div.removing {
+    animation: slideOut 0.5s ease-in-out;
+}
+
+.task-item {
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.task-item.removing {
+    opacity: 0;
+    transform: translateX(-100%);
+}
+
+@keyframes slideOut {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+}
+
+.overdue {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 10px;
+}
+
+.overdue .task-title {
+    font-size: var(--text-md);
+    font-family: var(--font-primary);
+    font-weight: var(--font-primary-regular);
+    color: var(--text-light);
+    margin-right: auto;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: rgb(124, 4, 4);
+}
+
+.overdue .task-date {
+    font-size: var(--text-md);
+    font-family: var(--font-primary);
+    font-weight: var(--font-primary-regular);
+    color: var(--text-light);
+    margin-left: 30px;
+}
+
+.overdue button {
+    margin-left: 5px;
+    padding: 5px;
+    border: 1px solid var(--text-light);
+    border-radius: 10px; 
+    font-size: var(--text-md);
+    font-family: var(--font-primary);
+    font-weight: var(--font-primary-regular);
+    outline: none;
+    box-shadow: 0 4px 8px rgba(152, 160, 244, 0.992);
+    transition: border-color 0.5s ease;
+    background-color: var(--text-light);
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.5s ease, transform 0.5s ease;
+}
+
+.overdue button:hover {
+    background-color: var(--primary-dark);
+    /* Cambia esto al color que desees */
+    border: 1px solid var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
